@@ -12,7 +12,7 @@ const Nav = () => {
     <nav className="h-[110px] w-full max-w-[1330px] px-[20px] py-[27px] flex items-center justify-between m-auto z-40 ">
       <div className="w-[145px]">
         <a href="/">
-          <img src={Logo} className="h-auto w-auto" />
+          <img src={Logo} className="h-auto w-auto"/>
         </a>
       </div>
       <ul className="hidden lg:flex gap-[21px]">
