@@ -1,12 +1,20 @@
 import "./App.css";
 import Nav from "./components/Nav";
-import Home from "./pages/Home";
+import Home from "./components/Hero";
+import PlanSection from "./components/PlanSection";
+import BannerSection from "./components/BannerSection";
+import ChooseSection from "./components/ChooseSection";
+// import Booking from "./components/Booking";
 
 function App() {
   return (
     <>
       <Nav />
       <Home />
+      {/* <Booking /> */}
+      <PlanSection />
+      <BannerSection />
+      <ChooseSection />
     </>
   );
 }
