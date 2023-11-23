@@ -10,7 +10,6 @@ const PickSection = () => {
   const [isSelected, setisSelected] = useState<string>("1");
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-    console.log(e.currentTarget.id);
     setisSelected(e.currentTarget.id);
   };
 
@@ -112,14 +111,15 @@ const PickSection = () => {
   const renderData = (dataArray: Data[]) => {
     return dataArray.map((item) => (
       <button
-        className={`text-[20px] font-semibold bg-[${
-          isSelected === item.id ? "#ff4d30" : "#e9e9e9"
-        }] text-[${
+        className={`text-[20px] font-semibold  text-[${
           isSelected === item.id ? "white" : "black"
         }] px-[25px] py-[15px] w-full text-left`}
         onClick={handleClick}
         id={item.id}
         key={item.id}
+        style={{
+          backgroundColor: isSelected === item.id ? "#ff4d30" : "#e9e9e9",
+        }}
       >
         {item.carname}
       </button>
@@ -128,7 +128,6 @@ const PickSection = () => {
 
   const renderSelectedData = () => {
     const selectedObject = data.find((item) => item.id === isSelected);
-    console.log(selectedObject);
 
     if (!selectedObject) {
       return <p>No matching object found</p>;
