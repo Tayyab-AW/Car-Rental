@@ -5,6 +5,7 @@ import Camry from "../assets/images/toyotacamry.jpg";
 import BMW from "../assets/images/bmw320.jpg";
 import GLK from "../assets/images/benz.jpg";
 import CC from "../assets/images/passatcc.jpg";
+import { Link } from "react-router-dom";
 
 const PickSection = () => {
   const [isSelected, setisSelected] = useState<string>("1");
@@ -170,12 +171,12 @@ const PickSection = () => {
           <div className="grid grid-rows-[auto] grid-cols-[1fr]">
             {propertyRows}
           </div>
-          <a
+          <Link
             className="mt-[14px] p-[10px] flex justify-center w-[250px] text-[white] bg-[#ff4d30] shadow-[6px_6px_0_#efe9e9] text-[20px] font-semibold uppercase cursor-pointer"
-            href="#booking-section"
+            to="#booking-section"
           >
             Reserve Now
-          </a>
+          </Link>
         </div>
       </div>
     );

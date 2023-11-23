@@ -3,6 +3,7 @@ import Cars from "../assets/images/cars.png";
 import Drive from "../assets/images/cross-country.png";
 import Prices from "../assets/images/pricing.png";
 import Charges from "../assets/images/hidden-charges.png";
+import { Link } from "react-router-dom";
 
 const ChooseSection = () => {
   type Data = {
@@ -86,8 +87,8 @@ const ChooseSection = () => {
                 the ultimate renting experience, so don't miss out on your
                 chance to save big.
               </p>
-              <a
-                href="#home"
+              <Link
+                to="#home"
                 className="flex text-[white] text-[16px] font-bold border-2 px-[25px] py-[15px] bg-[#ff4d30] border-[#ff4d30] shadow-[0_10px_15px_0_rgba(255,83,48,.35)] transition-all duration-300 w-fit"
               >
                 Find Details &nbsp;
@@ -105,7 +106,7 @@ const ChooseSection = () => {
                 >
                   <path d="M9 6l6 6l-6 6"></path>
                 </svg>
-              </a>
+              </Link>
             </div>
             <div className="flex flex-col max-w-[440px] gap-[45px] text-center ">
               {renderData(data)}

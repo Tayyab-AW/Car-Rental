@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import BG from "../assets/images/hero-bg.png";
 import Car from "../assets/images/main-car.png";
 
-const Hero = () => {
+const HomeHero = () => {
   return (
     <section id="hero" className="h-full w-full">
       <div className="max-w-[1330px] px-[25px] m-auto ">
@@ -21,7 +22,10 @@ const Hero = () => {
               flexible pick-up options and much more.
             </p>
             <div className="flex flex-col gap-[20px] md:flex-row">
-              <a className="flex gap-x-[5px] items-center px-[80px] md:px-[30px] py-[18px] border-2 border-[#ff4d30] bg-[#ff4d30] shadow-[0_10px_15px_0_rgba(255,83,48,.35)] text-[16px] font-bold text-center rounded-[3px] text-[white] transition-all duration-300">
+              <Link
+                to=""
+                className="flex gap-x-[5px] items-center px-[80px] md:px-[30px] py-[18px] border-2 border-[#ff4d30] bg-[#ff4d30] shadow-[0_10px_15px_0_rgba(255,83,48,.35)] text-[16px] font-bold text-center rounded-[3px] text-[white] transition-all duration-300"
+              >
                 Book Ride
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -38,8 +42,11 @@ const Hero = () => {
                   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
                   <path d="M9 12l2 2l4 -4"></path>
                 </svg>
-              </a>
-              <a className="flex gap-x-[5px] items-center px-[30px] py-[18px] border-2 border-[#010103] bg-[#010103] text-[16px] font-bold text-center rounded-[3px] text-[white] transition-all duration-300">
+              </Link>
+              <Link
+                to=""
+                className="flex gap-x-[5px] items-center px-[30px] py-[18px] border-2 border-[#010103] bg-[#010103] text-[16px] font-bold text-center rounded-[3px] text-[white] transition-all duration-300"
+              >
                 Learn More
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +62,7 @@ const Hero = () => {
                 >
                   <path d="M9 6l6 6l-6 6"></path>
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
           <img
@@ -68,4 +75,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HomeHero;

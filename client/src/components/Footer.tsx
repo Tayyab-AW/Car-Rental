@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer id="footer" className="py-[100px] bg-[white]">
@@ -12,8 +14,8 @@ const Footer = () => {
               have the perfect car to meet your needs.
             </li>
             <li className=" flex items-center justify-center mb-[10px] font-medium  md:justify-start">
-              <a
-                href="tel:123456789"
+              <Link
+                to="tel:123456789"
                 className="flex items-center text-[16px] font-medium font-[Rubik] md:items-start"
               >
                 <svg
@@ -33,11 +35,11 @@ const Footer = () => {
                   <path d="M15 3a6 6 0 0 1 6 6"></path>
                 </svg>
                 &nbsp; (123) -456-789
-              </a>
+              </Link>
             </li>
             <li className=" flex items-center justify-center mb-[10px] font-medium md:justify-start">
-              <a
-                href="mailto:  carrental@gmail.com"
+              <Link
+                to="mailto:  carrental@gmail.com"
                 className="flex items-center text-[16px] font-medium font-[Rubik]  md:items-start"
               >
                 <svg
@@ -56,37 +58,37 @@ const Footer = () => {
                   <path d="M3 7l9 6l9 -6"></path>
                 </svg>
                 &nbsp; carrental@gmail.com
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 target="_blank"
                 rel="noreferrer"
-                href="https://xpeedstudio.com/"
+                to="https://xpeedstudio.com/"
                 style={{ fontSize: "14px" }}
               >
                 Design by XpeedStudio
-              </a>
+              </Link>
             </li>
           </ul>
           <ul className=" text-[16px]  [&>li]:mb-[10px]">
             <li className="text-[24px] font-bold uppercase">Company</li>
             <li>
-              <a href="#home" className="text-[16px]">
+              <Link to="#home" className="text-[16px]">
                 New York
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#home">Careers</a>
+              <Link to="#home">Careers</Link>
             </li>
             <li>
-              <a href="#home">Mobile</a>
+              <Link to="#home">Mobile</Link>
             </li>
             <li>
-              <a href="#home">Blog</a>
+              <Link to="#home">Blog</Link>
             </li>
             <li>
-              <a href="#home">How we work</a>
+              <Link to="#home">How we work</Link>
             </li>
           </ul>
           <ul className=" text-[16px]  [&>li]:mb-[10px]">
@@ -104,7 +106,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter Email Address"
-                className="mt-[10px] px-[60px] py-[10px] border-[1_solid_transparent] bg-[#ececec] text-[14px] leading-[26px] w-full"
+                className="mt-[10px] px-[60px] py-[10px] border-none bg-[#ececec] text-[14px] leading-[26px] w-full"
               />
             </li>
             <li>

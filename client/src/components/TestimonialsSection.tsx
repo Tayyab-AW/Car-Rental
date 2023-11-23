@@ -6,7 +6,7 @@ const TestimonialsSection = () => {
     <section id="testimonials-section" className="py-[100px]">
       <div className="m-auto max-w-[1330px] px-[25px] ">
         <div className="flex flex-col items-center justify-center text-center">
-          <div className="m-auto flex flex-col w-full items-center max-w-[700px] md:mb-[50px]">
+          <div className="m-auto flex flex-col w-full items-center max-w-[700px] mb-[50px]">
             <h4 className="text-[22px] font-medium mb-[7px] w-full">
               Reviewed by People
             </h4>

@@ -72,7 +72,7 @@ const CompleteReservationModal = (props: any) => {
   };
 
   return (
-    <div className="booking-modal z-[9999] bg-[white] border-[2px_solid_#fff] h-100vh left-[0px] top-[0px] right-[0px] bottom-[0px] overflow-x-hidden overflow-y-scroll pr-[2px] fixed flex flex-col shadow-lg p-[10px]">
+    <div className="booking-modal max-w-[830px] m-auto z-[9999] bg-[white] border-[2px_solid_#fff] h-100vh left-[0px] top-[0px] right-[0px] bottom-[0px] overflow-x-hidden overflow-y-scroll pr-[2px] fixed flex flex-col shadow-lg md:top-10">
       <div className="flex items-center justify-between bg-[#ff4d30] p-[10px_15px]  text-[white]">
         <h2 className="text-[20px] font-bold uppercase">
           Complete Reservation
@@ -105,8 +105,8 @@ const CompleteReservationModal = (props: any) => {
         </p>
       </div>
 
-      <div className="grid bg-[white] grid-cols-[1fr] text-center p-[30px] border-b border-b-[1px_solid_gray]">
-        <div className="flex flex-col gap-[32px] ">
+      <div className="grid bg-[white] grid-cols-[1fr]  text-center p-[30px] border-b border-b-[1px_solid_gray] md:grid-cols-[1fr_1fr] md:text-left">
+        <div className="flex flex-col gap-[32px] md:items-start">
           <div className="flex flex-col gap-[20px]">
             <h5 className="text-[#ff4d30] text-[18px] font-bold ">
               Location &amp; Date
@@ -243,220 +243,226 @@ const CompleteReservationModal = (props: any) => {
           className="flex flex-col "
           onSubmit={handleSubmit(onSubmitHandler)}
         >
-          <div className="grid py-[10px] grid-cols-[1fr] gap-[20px]">
-            <span className="gap-[4px] flex flex-col">
-              <label
-                htmlFor="firstName"
-                className="text-[16px] font-medium text-[#777] "
-              >
-                First Name <b className="text-[#ff4d30]">*</b>
-              </label>
-              <input
-                {...register("firstName")}
-                id="firstName"
-                className="px-[14px] py-[15px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
-                type="text"
-                placeholder="Enter your first name"
-                style={{
-                  border: errors.firstName ? "1px solid" : "none",
-                  borderColor: errors.firstName ? "#FF0000" : "",
-                }}
-              />
-              {errors.firstName && (
-                <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
-                  {errors.firstName.message}
-                </p>
-              )}
-            </span>
+          <div className="grid py-[10px] gap-[20px] grid-cols-[1fr] md:grid-cols-[1fr_1fr]">
+            <div>
+              <span className="gap-[4px] flex flex-col">
+                <label
+                  htmlFor="firstName"
+                  className="text-[16px] font-medium text-[#777] "
+                >
+                  First Name <b className="text-[#ff4d30]">*</b>
+                </label>
+                <input
+                  {...register("firstName")}
+                  id="firstName"
+                  className="px-[15px] py-[14px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
+                  type="text"
+                  placeholder="Enter your first name"
+                  style={{
+                    border: errors.firstName ? "1px solid" : "none",
+                    borderColor: errors.firstName ? "#FF0000" : "",
+                  }}
+                />
+                {errors.firstName && (
+                  <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
+                    {errors.firstName.message}
+                  </p>
+                )}
+              </span>
+            </div>
+
+            <div>
+              <span className="gap-[4px] flex flex-col">
+                <label
+                  htmlFor="lastName"
+                  className="text-[16px] font-medium text-[#777] "
+                >
+                  Last Name <b className="text-[#ff4d30]">*</b>
+                </label>
+                <input
+                  {...register("lastName")}
+                  id="lastName"
+                  className="px-[15px] py-[14px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
+                  type="text"
+                  placeholder="Enter your last name"
+                  style={{
+                    border: errors.lastName ? "1px solid" : "none",
+                    borderColor: errors.lastName ? "#FF0000" : "",
+                  }}
+                />
+                {errors.lastName && (
+                  <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
+                    {errors.lastName.message}
+                  </p>
+                )}
+              </span>
+            </div>
+
+            <div>
+              <span className="gap-[4px] flex flex-col">
+                <label
+                  htmlFor="phoneNumber"
+                  className="text-[16px] font-medium text-[#777] "
+                >
+                  Phone Number <b className="text-[#ff4d30]">*</b>
+                </label>
+                <input
+                  {...register("phoneNumber")}
+                  id="phoneNumber"
+                  className="px-[15px] py-[14px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
+                  type="text"
+                  placeholder="Enter your phone number"
+                  style={{
+                    border: errors.phoneNumber ? "1px solid" : "none",
+                    borderColor: errors.phoneNumber ? "#FF0000" : "",
+                  }}
+                />
+                {errors.phoneNumber && (
+                  <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
+                    {errors.phoneNumber.message}
+                  </p>
+                )}
+              </span>
+            </div>
+
+            <div>
+              <span className="gap-[4px] flex flex-col">
+                <label
+                  htmlFor="age"
+                  className="text-[16px] font-medium text-[#777] "
+                >
+                  Age <b className="text-[#ff4d30]">*</b>
+                </label>
+                <input
+                  {...register("age")}
+                  id="age"
+                  className="px-[15px] py-[14px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
+                  type="number"
+                  placeholder="18"
+                  style={{
+                    border: errors.age ? "1px solid" : "none",
+                    borderColor: errors.age ? "#FF0000" : "",
+                  }}
+                />
+                {errors.age && (
+                  <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
+                    {errors.age.message}
+                  </p>
+                )}
+              </span>
+            </div>
           </div>
 
-          <div className="grid py-[10px] grid-cols-[1fr] gap-[20px]">
-            <span className="gap-[4px] flex flex-col">
-              <label
-                htmlFor="lastName"
-                className="text-[16px] font-medium text-[#777] "
-              >
-                Last Name <b className="text-[#ff4d30]">*</b>
-              </label>
-              <input
-                {...register("lastName")}
-                id="lastName"
-                className="px-[14px] py-[15px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
-                type="text"
-                placeholder="Enter your last name"
-                style={{
-                  border: errors.lastName ? "1px solid" : "none",
-                  borderColor: errors.lastName ? "#FF0000" : "",
-                }}
-              />
-              {errors.lastName && (
-                <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
-                  {errors.lastName.message}
-                </p>
-              )}
-            </span>
+          <div className="grid py-[10px] gap-[20px] grid-cols-[1fr]">
+            <div>
+              <span className="gap-[4px] flex flex-col">
+                <label
+                  htmlFor="email"
+                  className="text-[16px] font-medium text-[#777] "
+                >
+                  Email <b className="text-[#ff4d30]">*</b>
+                </label>
+                <input
+                  {...register("email")}
+                  id="email"
+                  className="px-[15px] py-[14px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
+                  type="email"
+                  placeholder="Enter your email address"
+                  style={{
+                    border: errors.email ? "1px solid" : "none",
+                    borderColor: errors.email ? "#FF0000" : "",
+                  }}
+                />
+                {errors.email && (
+                  <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
+                    {errors.email.message}
+                  </p>
+                )}
+              </span>
+            </div>
+
+            <div>
+              <span className="gap-[4px] flex flex-col">
+                <label
+                  htmlFor="address"
+                  className="text-[16px] font-medium text-[#777] "
+                >
+                  Address <b className="text-[#ff4d30]">*</b>
+                </label>
+                <input
+                  {...register("address")}
+                  id="address"
+                  className="px-[15px] py-[14px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
+                  type="text"
+                  placeholder="Enter your street address"
+                  style={{
+                    border: errors.address ? "1px solid" : "none",
+                    borderColor: errors.address ? "#FF0000" : "",
+                  }}
+                />
+                {errors.address && (
+                  <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
+                    {errors.address.message}
+                  </p>
+                )}
+              </span>
+            </div>
           </div>
 
-          <div className="grid py-[10px] grid-cols-[1fr] gap-[20px]">
-            <span className="gap-[4px] flex flex-col">
-              <label
-                htmlFor="phoneNumber"
-                className="text-[16px] font-medium text-[#777] "
-              >
-                Phone Number <b className="text-[#ff4d30]">*</b>
-              </label>
-              <input
-                {...register("phoneNumber")}
-                id="phoneNumber"
-                className="px-[14px] py-[15px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
-                type="text"
-                placeholder="Enter your phone number"
-                style={{
-                  border: errors.phoneNumber ? "1px solid" : "none",
-                  borderColor: errors.phoneNumber ? "#FF0000" : "",
-                }}
-              />
-              {errors.phoneNumber && (
-                <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
-                  {errors.phoneNumber.message}
-                </p>
-              )}
-            </span>
-          </div>
+          <div className="grid py-[10px] gap-[20px] grid-cols-[1fr] md:grid-cols-[1fr_1fr]">
+            <div>
+              <span className="gap-[4px] flex flex-col">
+                <label
+                  htmlFor="city"
+                  className="text-[16px] font-medium text-[#777] "
+                >
+                  City <b className="text-[#ff4d30]">*</b>
+                </label>
+                <input
+                  {...register("city")}
+                  id="city"
+                  className="px-[15px] py-[14px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
+                  type="text"
+                  placeholder="Enter your city"
+                  style={{
+                    border: errors.city ? "1px solid" : "none",
+                    borderColor: errors.city ? "#FF0000" : "",
+                  }}
+                />
+                {errors.city && (
+                  <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
+                    {errors.city.message}
+                  </p>
+                )}
+              </span>
+            </div>
 
-          <div className="grid py-[10px] grid-cols-[1fr] gap-[20px]">
-            <span className="gap-[4px] flex flex-col">
-              <label
-                htmlFor="age"
-                className="text-[16px] font-medium text-[#777] "
-              >
-                Age <b className="text-[#ff4d30]">*</b>
-              </label>
-              <input
-                {...register("age")}
-                id="age"
-                className="px-[14px] py-[15px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
-                type="number"
-                placeholder="18"
-                style={{
-                  border: errors.age ? "1px solid" : "none",
-                  borderColor: errors.age ? "#FF0000" : "",
-                }}
-              />
-              {errors.age && (
-                <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
-                  {errors.age.message}
-                </p>
-              )}
-            </span>
-          </div>
-
-          <div className="grid py-[10px] grid-cols-[1fr] gap-[20px]">
-            <span className="gap-[4px] flex flex-col">
-              <label
-                htmlFor="email"
-                className="text-[16px] font-medium text-[#777] "
-              >
-                Email <b className="text-[#ff4d30]">*</b>
-              </label>
-              <input
-                {...register("email")}
-                id="email"
-                className="px-[14px] py-[15px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
-                type="email"
-                placeholder="Enter your email address"
-                style={{
-                  border: errors.email ? "1px solid" : "none",
-                  borderColor: errors.email ? "#FF0000" : "",
-                }}
-              />
-              {errors.email && (
-                <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
-                  {errors.email.message}
-                </p>
-              )}
-            </span>
-          </div>
-
-          <div className="grid py-[10px] grid-cols-[1fr] gap-[20px]">
-            <span className="gap-[4px] flex flex-col">
-              <label
-                htmlFor="address"
-                className="text-[16px] font-medium text-[#777] "
-              >
-                Address <b className="text-[#ff4d30]">*</b>
-              </label>
-              <input
-                {...register("address")}
-                id="address"
-                className="px-[14px] py-[15px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
-                type="text"
-                placeholder="Enter your street address"
-                style={{
-                  border: errors.address ? "1px solid" : "none",
-                  borderColor: errors.address ? "#FF0000" : "",
-                }}
-              />
-              {errors.address && (
-                <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
-                  {errors.address.message}
-                </p>
-              )}
-            </span>
-          </div>
-
-          <div className="grid py-[10px] grid-cols-[1fr] gap-[20px]">
-            <span className="gap-[4px] flex flex-col">
-              <label
-                htmlFor="city"
-                className="text-[16px] font-medium text-[#777] "
-              >
-                City <b className="text-[#ff4d30]">*</b>
-              </label>
-              <input
-                {...register("city")}
-                id="city"
-                className="px-[14px] py-[15px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
-                type="text"
-                placeholder="Enter your city"
-                style={{
-                  border: errors.city ? "1px solid" : "none",
-                  borderColor: errors.city ? "#FF0000" : "",
-                }}
-              />
-              {errors.city && (
-                <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
-                  {errors.city.message}
-                </p>
-              )}
-            </span>
-          </div>
-
-          <div className="grid py-[10px] grid-cols-[1fr] gap-[20px]">
-            <span className="gap-[4px] flex flex-col">
-              <label
-                htmlFor="zipCode"
-                className="text-[16px] font-medium text-[#777] "
-              >
-                Zip Code <b className="text-[#ff4d30]">*</b>
-              </label>
-              <input
-                {...register("zipCode")}
-                id="zipCode"
-                className="px-[14px] py-[15px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
-                type="number"
-                placeholder="Enter your zip code"
-                style={{
-                  border: errors.zipCode ? "1px solid" : "none",
-                  borderColor: errors.zipCode ? "#FF0000" : "",
-                }}
-              />
-              {errors.zipCode && (
-                <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
-                  {errors.zipCode.message}
-                </p>
-              )}
-            </span>
+            <div>
+              <span className="gap-[4px] flex flex-col">
+                <label
+                  htmlFor="zipCode"
+                  className="text-[16px] font-medium text-[#777] "
+                >
+                  Zip Code <b className="text-[#ff4d30]">*</b>
+                </label>
+                <input
+                  {...register("zipCode")}
+                  id="zipCode"
+                  className="px-[15px] py-[14px] text-[15px] font-medium text-[#555] bg-[#dbdbdb] outline-none ring-0"
+                  type="number"
+                  placeholder="Enter your zip code"
+                  style={{
+                    border: errors.zipCode ? "1px solid" : "none",
+                    borderColor: errors.zipCode ? "#FF0000" : "",
+                  }}
+                />
+                {errors.zipCode && (
+                  <p className="error-message flex items-center m-[6px] text-[12px] text-[#FF0000]">
+                    {errors.zipCode.message}
+                  </p>
+                )}
+              </span>
+            </div>
           </div>
 
           <span className="my-[20px] flex items-center gap-[10px]">
@@ -465,10 +471,10 @@ const CompleteReservationModal = (props: any) => {
               Please send me latest news and updates
             </p>
           </span>
-          <div className="mx-[-30px] p-[30px] flex bg-[#dbdbdb] items-center justify-center">
+          <div className="mx-[-30px] p-[30px] flex bg-[#dbdbdb] items-center justify-center md:justify-end">
             <button
               type="submit"
-              className="border-[#ff0] border px-[20px] py-[12px] text-[24px] font-bold bg-[#ff4d30] text-[white] transition-all duration-200"
+              className="border-[#ff0] border px-[20px] py-[12px] text-[24px] font-bold bg-[#ff4d30] text-[white] transition-all duration-200 flex items-center"
             >
               Reserve Now
             </button>
