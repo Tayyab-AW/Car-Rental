@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import Logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
 
@@ -36,6 +36,17 @@ const Nav = () => {
   const handleClick = () => {
     setisOpen(!isOpen);
   };
+
+  const [scrollPosition, setPosition] = useState(0);
+
+  useLayoutEffect(() => {
+    function updatePosition() {
+      setPosition(window.scrollY);
+    }
+    window.addEventListener("scroll", updatePosition);
+    updatePosition();
+    return () => window.removeEventListener("scroll", updatePosition);
+  }, []);
 
   return (
     <nav id="nav" className="absolute h-[110px] w-full z-40 ">
@@ -97,6 +108,17 @@ const Nav = () => {
           </div>
         </div>
       </div>
+
+      {scrollPosition > 700 && (
+        <button
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          }}
+          className="flex items-center justify-center bg-[#ff4d30] text-[white] fixed p-[20px] rounded-full bottom-[25px] right-[25px] text-[23px] w-[50px] h-[50px] transition-all duration-300"
+        >
+          ^ {}
+        </button>
+      )}
     </nav>
   );
 };
