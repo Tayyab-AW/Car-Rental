@@ -1,10 +1,13 @@
 import { useState } from "react";
 
 const FaqSection = () => {
-  const [isOpen, setisOpen] = useState<string>("0");
+  const [isOpen, setisOpen] = useState<string>("1");
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     console.log(e.currentTarget.id);
+    console.log("isOpen");
+    console.log(isOpen);
+
     isOpen === e.currentTarget.id
       ? setisOpen("0")
       : setisOpen(e.currentTarget.id);
@@ -73,13 +76,12 @@ const FaqSection = () => {
           </svg>
         </div>
         <div
-          className="faq-box__answer  text-left px-[45px]  max-h-[550px] overflow-hidden font-[Rubik] text-[16px] leading-[26.6px] text-[#706f7b]"
+          className="faq-box__answer  text-left px-[45px]  overflow-hidden font-[Rubik] text-[16px] leading-[26.6px] text-[#706f7b]"
           style={{
-            maxHeight: isOpen === item.number ? "550px" : 0,
-            transition:
-              isOpen === item.number ? "all 0.40s ease" : "all 0.40s ease",
-            paddingTop: isOpen === item.number ? "28px" : 0,
-            paddingBottom: isOpen === item.number ? "28px" : 0,
+            maxHeight: isOpen === item.number ? "550px" : "0px",
+            transition: "all 0.40s ease",
+            paddingTop: isOpen === item.number ? "28px" : "0px",
+            paddingBottom: isOpen === item.number ? "28px" : "0px",
           }}
         >
           {item.description}

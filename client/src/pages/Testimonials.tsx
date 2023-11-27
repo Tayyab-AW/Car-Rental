@@ -1,3 +1,4 @@
+import BookBanner from "../components/BookBanner";
 import PagesHero from "../components/PagesHero";
 import TestimonialsSection from "../components/TestimonialsSection";
 
@@ -6,6 +7,7 @@ const Testimonials = () => {
     <div>
       <PagesHero name="Testimonials" />
       <TestimonialsSection />
+      <BookBanner />
     </div>
   );
 };
